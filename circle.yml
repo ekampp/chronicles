@@ -12,4 +12,4 @@ deployment:
   production:
     branch: master
     commands:
-      - git push --force git@heroku.com:ballerup-chronicles.git $CIRCLE_SHA1:master
+      - git push --force git@heroku.com:ballerup-chronicles-staging.git $CIRCLE_SHA1:master

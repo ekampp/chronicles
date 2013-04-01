@@ -7,7 +7,7 @@ gem "thin"
 gem "decent_exposure"
 
 # Security
-gem 'cancan'
+gem 'cancan', github: "ryanb/cancan", branch: "2.0"
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem "rack-cors", require: 'rack/cors'

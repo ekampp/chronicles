@@ -1,8 +1,0 @@
-- object = defined?(contact_attempt) ? contact_attempt : ContactAttempt.new
-
-= simple_form_for object, url: contact_attempts_path(anchor: "contact"), html: { class: "span6 form-vertical", id: "contact_form" } do |form|
-  = form.input :name, label: false, :input_html => { class: "span5" }
-  = form.input :email, label: false, :input_html => { class: "span5" }
-  = form.input :url, label: false, :input_html => { class: "span5" }
-  = form.input :comment, as: :text, label: false, :input_html => { class: "span5" }
-  = form.button :submit, id: "commit", class: "btn btn-primary"

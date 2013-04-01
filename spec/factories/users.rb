@@ -17,11 +17,5 @@ FactoryGirl.define do
         })
       end
     end
-
-    trait :email do
-      after :build do |u|
-        u.email = Faker::Internet.email
-      end
-    end
   end
 end
