@@ -46,15 +46,26 @@ module Chronicles
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
-    # Enable CORS
-    # Uncommenting this allows you to specify various resources that's allowed
-    # to reach the site from another domain.
-    #
-    # config.middleware.use Rack::Cors do
-    #   allow do
-    #     origins '*'
-    #     resource '*', :headers => :any, :methods => [:get, :post, :options]
-    #   end
-    # end
+    # Disable Rails's static asset server (Apache or nginx will already do this).
+    config.serve_static_assets = false
+
+    # Compress JavaScripts and CSS.
+    config.assets.js_compressor  = :uglifier
+    config.assets.css_compressor = :sass
+
+    # Whether to fallback to assets pipeline if a precompiled asset is missed.
+    config.assets.compile = false
+
+    # Generate digests for assets URLs.
+    config.assets.digest = true
+
+    # Enable assets for asset_sync
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets.
+    config.assets.version = '1.0'
+
+    # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+    config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   end
 end
