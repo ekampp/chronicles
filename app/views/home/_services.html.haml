@@ -1,0 +1,76 @@
+%section#services.container.slim
+  .row
+    .span12
+      %h1
+        %a{ name: "services" }
+        = t(".services")
+        %hr
+
+  .row
+    .span10.offset1.copy
+      %p= t(".intro").html_safe
+      %p= t(".quote")
+      %p.right - Emil Kampp
+
+  .row.pad
+    .span4
+      %h2.center
+        %i.color.icon-briefcase
+        = t(".full_stack.title")
+      %p= t(".full_stack.summary")
+
+    .span4
+      %h2.center
+        %i.color.icon-cloud
+        = t(".spa.title")
+      %p= t(".spa.summary")
+
+    .span4
+      %h2.center
+        %i.color.icon-cogs
+        = t(".api.title")
+      %p= t(".api.summary")
+
+  .row.pad
+    .span12
+      %h2= t(".features.title")
+      %hr
+
+  .row
+    .span6
+      %h3
+        %i.icon-tasks.color
+        = t(".features.release.title")
+      %p= t(".features.release.summary")
+
+    .span6
+      %h3
+        %i.icon-wrench.color
+        = t(".features.test.title")
+      %p= t(".features.test.summary")
+
+  .row
+    .span6
+      %h3
+        %i.icon-warning-sign.color
+        = t(".features.security.title")
+      %p= t(".features.security.summary")
+
+    .span6
+      %h3
+        %i.icon-twitter.color
+        = t(".features.social.title")
+      %p= t(".features.social.summary")
+
+  .row
+    .span6
+      %h3
+        %i.icon-file-alt.color
+        = t(".features.documentation.title")
+      %p= t(".features.documentation.summary")
+
+    .span6
+      %h3
+        %i.icon-github.color
+        = t(".features.opensource.title")
+      %p= t(".features.opensource.summary")

@@ -1,0 +1,10 @@
+%section#sign_in_container.container
+  .row
+    .span12
+      %h1= t(".title")
+      %hr
+
+  .row
+    .span6.offset3
+      %p.copy= t(".explenation")
+      = link_to t(".twitter"), "/auth/twitter", id: "twitter", class: "btn btn-primary btn-large input-block-level"

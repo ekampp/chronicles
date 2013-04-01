@@ -1,0 +1,6 @@
+= content_for :menu do
+  %li= link_to "Services", "#services", class: "anchorLink"
+  %li= link_to "Portfolio", "#portfolio", class: "anchorLink"
+
+= render "home/services"
+= render "home/portfolio"

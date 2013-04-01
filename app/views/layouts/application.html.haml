@@ -1,0 +1,41 @@
+!!!
+%html{ lang: "en" }
+  %head
+    / Page
+    %meta{ content: "text/html; charset=UTF-8", |
+           "http-equiv" => "Content-Type" }     |
+    %meta{ charset: "utf-8" }
+
+    / Page information
+    %title Kampp Media
+    %meta{ content: "Emil Kampp", name: "author" }
+    %meta{ content: "Portfolio, Kampp, Media, Ruby, Rails, HTML, CSS, Javascript, Single Page Application, Web Application", name: "keywords" }
+    %meta{ content: "This the online portfolio for Kampp Media", name: "description" }
+
+    / HTML5 Support for IE
+    /[if lt IE 9]
+      <%= javascript_include_tag 'html5shiv-printshiv' %>
+
+    / Stylesheets
+    = stylesheet_link_tag "application"
+
+    / Favicon
+    %link{ href: asset_url("favicon/favicon.png"),  |
+           rel: "shortcut icon"}                    |
+
+    / Enables csrf tokens for ajax requests
+    = csrf_meta_tag
+
+  / Note that the data-offset must be greater than the deducted pixels from the jquery.anchor.js file, to allow both scrollspy and anchor to work together.
+  / It must also be large enough to reach the first anchor on the page, to make sure that scrollspy doesn't automatically mark the last menu item as active.
+  %body{ "data-spy" => "scroll", "data-target" => ".navbar", "data-offset" => 141 }
+    = render "layouts/header"
+    = yield
+    = render "layouts/footer"
+
+    / JS
+    = javascript_include_tag "application"
+    = javascript_include_tag "//use.typekit.net/osm0xsp.js"
+    = yield :js
+    :javascript
+      try{Typekit.load();}catch(e){}

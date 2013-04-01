@@ -1,0 +1,15 @@
+checkout:
+  post:
+    - cp .env.test .env
+
+machine:
+  timezone:
+    Europe/Copenhagen
+  ruby:
+    version: 2.0.0-p0
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git push --force git@heroku.com:ballerup-chronicles.git $CIRCLE_SHA1:master

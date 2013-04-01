@@ -1,0 +1,17 @@
+= render "menu"
+
+%section#projects.container.slim
+  .row
+    .span12
+      %h1
+        = t(".title")
+        = link_to t(".new_project"), [ :new, :admin, :project ]
+      %hr
+
+  - projects.in_groups_of(3, false).each do |projects|
+    .row
+      - projects.each do |project|
+        .span4
+          = link_to [ :edit, :admin, project ], class: "block" do
+            %h2= project.name
+            %p= project.summary

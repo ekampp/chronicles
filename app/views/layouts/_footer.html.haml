@@ -1,0 +1,32 @@
+%footer#contact
+  .container
+    %a{ name: "contact" }
+
+    .row
+      .span12
+        %hr
+        %h4.center= t(".title")
+
+    .row
+      .span6.right
+        .contact-options
+          %h4
+            = link_to "mailto:emil@kampp.me", class: "block" do
+              %i.icon-envelope
+              = t(".email")
+
+          %h4
+            %i.icon-phone
+            = t(".phone")
+          .small
+            %p +45 42427176
+            %p +44 7466 718413
+
+      .span6
+        .address
+          %h4= t(".live")
+          .small
+            %p Kampp Media
+            %p Nannasgade 28
+            %p DK 2200, Nørrebro
+            %p Denmark

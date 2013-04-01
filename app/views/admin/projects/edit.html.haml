@@ -1,0 +1,9 @@
+= render "menu"
+
+%section.container.slim
+  .row
+    .span12
+      %h1= project.name
+      %hr
+
+  = render partial: "form", locals: { project: project }

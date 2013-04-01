@@ -1,0 +1,187 @@
+@mixin sans-font
+  font-family: "omnes-pro"
+  font-weight: 300
+  letter-spacing: 1px
+
+@mixin serif-font
+  font-family: "bree-serif"
+  letter-spacing: 1px
+
+@mixin base-color
+  color: #fdbd33
+
+@mixin current-color
+  color: #40c0fb
+
+@mixin highlighted-color
+  color: #fb6840
+
+*
+  &::selection,
+  &::-moz-selection,
+  &::-o-selection
+    background: #fdbd33
+    color: #fff
+
+body
+  @include base-color
+  @include sans-font
+  background: asset-url('back.png') repeat
+  font-size: 20px
+  line-height: 25px
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVQIW2NkYGCQBOLnQAwGjDAG0QKSAD1rAR6LthyCAAAAAElFTkSuQmCC'), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAWSjEh8SSD7OUwAzAFJggTgHJAAAEkuAx5OdRJCAAAAAElFTkSuQmCC') #2b3036
+  padding-top: 70px
+  padding-bottom: 70px
+
+h1
+  @include serif-font
+  text-align: center
+  margin-top: 40px
+  margin-bottom: 10px
+
+h2
+  @include serif-font
+  text-align: center
+  font-size: 30px
+
+footer
+  width: 100%
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVQIW2NkYGCQBOLnQAwGjDAG0QKSAD1rAR6LthyCAAAAAElFTkSuQmCC'), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAWSjEh8SSD7OUwAzAFJggTgHJAAAEkuAx5OdRJCAAAAAElFTkSuQmCC') #2b3036
+  position: fixed
+  bottom: 0
+  display: block
+
+a
+  @include current-color
+  &:hover
+    @include highlighted-color
+  &:visited,
+  &:active
+    @include current-color
+    &:hover
+      @include highlighted-color
+  &.block
+    color: inherit
+    text-decoration: none
+    &:hover
+      color: inherit
+  &.btn
+    padding-top: 9px
+    padding-bottom: 3px
+    &.btn-large
+      padding-top: 8px
+    &.btn-small
+      padding-top: 6px
+    color: #555
+    &:hover
+      color: #555
+    &.btn-warning,
+    &.btn-danger,
+    &.btn-success,
+    &.btn-info,
+    &.btn-primary,
+    &.btn-inverse
+      color: #fff
+      &:hover
+        color: #fff
+
+section
+  margin-top: 70px
+  display: block
+  &.slim
+    margin-top: 0
+
+hr
+  margin: 0 0 15px 0
+  border-top-color: rgba(0,0,0,0.3)
+  border-bottom-color: rgba(255,255,255,0.09)
+
+label
+  font-size: 20px
+  line-height: 25px
+
+.translation_missing
+  border-bottom: dotted 2px red
+
+.btn, button
+  @include serif-font
+  padding-top: 8px
+
+.pad
+  margin-top: 30px
+
+.color
+  @include current-color
+
+.copy
+  padding-top: 20px
+  padding-bottom: 20px
+  font-size: 22px
+  line-height: 26px
+  font-style: italic
+
+.small
+  font-size: 16px
+  line-height: 20px
+
+.center
+  text-align: center
+
+.right
+  text-align: right
+
+.alert
+  font-size: 20px
+  line-height: 24px
+  padding-bottom: 0
+  .close
+    font-size: 35px
+    line-height: 36px
+
+.navbar
+  margin-bottom: 20px
+
+  .navbar-inner
+    padding-right: 10px
+    padding-left: 0
+    background: none
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGDwAeItQAwGjDAGNgGwSgwVAFFOAgWfVVqnAAAAAElFTkSuQmCC') repeat #23282e
+    border: none
+    -webkit-border-radius: 0
+    -moz-border-radius: 0
+    border-radius: 0
+  .brand
+    @include sans-font
+    @include base-color
+    padding: 0
+    margin: 0 20px 0 20px
+    font-size: 24px
+    line-height: 60px
+    text-shadow: 0 1px 0 #313131
+  .nav >
+    li
+      > a
+        @include current-color
+        line-height: 60px
+        padding: 0 15px
+        text-shadow: 1px 1px 0 #313131
+        text-decoration: none
+      &:last-child > a
+        border-right: none
+      > a:hover
+        @include highlighted-color
+        text-shadow: 1px 1px 0 #313131
+    .active > a
+      @include highlighted-color
+      text-decoration: none
+      background-color: rgba(0, 0, 0, 0.07)
+      -moz-box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset
+      -webkit-box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset
+      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset
+      &:hover, &:focus
+        @include highlighted-color
+        text-decoration: none
+        background-color: rgba(0, 0, 0, 0.07)
+        -moz-box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset
+        -webkit-box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset
+        box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) inset, 0 4px 18px rgba(0, 0, 0, 0.2) inset

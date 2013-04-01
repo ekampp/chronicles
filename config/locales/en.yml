@@ -1,0 +1,146 @@
+en:
+  admin:
+    projects:
+      menu:
+        my_profile: "My profile"
+        projects: "Projects"
+      index:
+        title: "Edit a project or"
+        new_project: "create a new"
+      form_actions:
+        cancel: "Cancel"
+      form:
+        select_avatar: "Select cover image"
+        remove_avatar: "Remove cover image"
+
+  layouts:
+    footer:
+      title: Contact us
+      email: Email us
+      phone: Phone us
+      live: We live at
+    application:
+      home: "Home"
+  contact_attempts:
+    create:
+      success: |
+        "We have received your comment. We will get back
+        to you shortly."
+
+  home:
+    services:
+      services: "Our services"
+      intro: |
+        Though my company, Kampp Media, I deliver state
+        of the art web applications. Both single page
+        applications, APIs and full-stack applications
+        using <a href='http://rubyonrails.org'>
+        Ruby on Rails</a>.
+      quote: |
+        We specialize in solving hard problems. Using the
+        latest technology to build customized web
+        applications to fit your business model.
+      full_stack:
+        title: Full stack
+        summary: |
+          We specialize in making greatly customized full
+          stack applications, that delivers everything
+          from database to front-end design to solve your
+          particular problem.
+      spa:
+        title: Single page
+        summary: |
+          If you already have a backend system, we will
+          develop that great, interactive modern web
+          application to present the data to your
+          customers.
+      api:
+        title: API
+        summary: |
+          Maybe you already have a good designer and a
+          website, or you have a mobile application, but
+          you need that backend to crunch the numbers and
+          store the data.
+      features:
+        title: Features
+        release:
+          title: Quick releases
+          summary: |
+            We deliver your software in quick, tight
+            release cycles to allow you to follow the
+            development and suggest changes along the
+            way.
+        test:
+          title: Well tested
+          summary: |
+            We implement Test Driven Development (TDD) to
+            ensure that no parts of the software goes
+            untested. This results in high quality software.
+        security:
+          title: Security matters
+          summary: |
+            We use the latest technologies in combination
+            with the quick release cycles to keep the
+            solutions we develop secure and updated.
+        social:
+          title: Social integration
+          summary: |
+            No matter which of the services you want, we
+            can make sure that they all integrate greatly
+            and effortlessly with all the social media such
+            as Twitter and Facebook.
+        documentation:
+          title: Documentation
+          summary: |
+            When we deliver the software we will give you
+            an easy to read service document that will allow
+            you to quickly get going with your new solution.
+        opensource:
+          title: Open source
+          summary: |
+            We use a lot of open source software. This allows
+            us to quickly get going, and make sure that there
+            are many people out there indirectly contributing
+            to keep your solution up to date.
+
+    portfolio:
+      title: Portfolio
+      intro: |
+        We would like to just show you a few of the projects
+        that we have been working on. Feel free to sort
+        through them, and click each one for details.
+
+  sessions:
+    sign_out:
+      success: "You have been signed out"
+    users:
+      update:
+        success: "Your profile has been updated"
+    sign_in:
+      title: "Sign in"
+      explenation: |
+        "To gain access to this site, you must first sign
+        in with any of these providers:"
+      twitter: "Twitter"
+    create:
+      created: "%{name}, you'r profile has been created."
+      updated: "%{name}, you have been signed in"
+      failure: "Sorry! We could not sig you in"
+
+  user:
+    profile_picture:
+      sign_in: "Sign in"
+    newsletter:
+      newsletter_and_gravater: |
+        Also determines your profile image with
+        <a href='http://gravatar.com' target='_blank'>
+        Gravatar</a>.
+    edit:
+      title: "Edit your profile"
+      sign_out: "Sign out"
+      my_profile: "My profile"
+      projects: "Projects"
+
+  application:
+    render_401:
+      rescued: "You are not authorized to view that page!"

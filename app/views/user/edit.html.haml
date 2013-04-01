@@ -1,0 +1,20 @@
+= content_for :menu do
+  %li.active= link_to t(".my_profile"), edit_user_path
+  - if can? :manage, Project
+    %li= link_to t(".projects"), admin_projects_path
+
+%section#edit_user_container.container.slim
+  .row
+    .span12
+      %h1= t(".title")
+      %hr
+
+  .row
+    .span12
+      = simple_form_for user, url: user_path(user), html: { class: "form-horizontal" } do |form|
+
+        = render partial: "newsletter", locals: { form: form }
+
+        .form-actions
+          = form.button :submit, id: "commit", class: "btn btn-success"
+          = link_to t(".sign_out"), sign_out_path, id: "sign_out", class: "btn btn-warning"

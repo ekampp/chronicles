@@ -1,0 +1,37 @@
+%section#portfolio.container
+  .row
+    .span12
+      %h1
+        %a{ name: "portfolio" }
+        = t(".title")
+        %hr
+
+  .row
+    .span10.offset1
+      %p.copy= t(".intro")
+
+  .row.pad
+    .span4
+      = link_to "http://scholastic.co.uk", class: "block", target: "_blank" do
+        %h2.color Scholastic
+        = image_tag asset_url("photos/scholastic.jpg")
+        %p.pad We where tasked with reworking the entire search structure, by upgrading to Apache's Solr project.
+
+    .span4
+      = link_to "http://milestoneselling.dk", class: "block", target: "_blank" do
+        %h2.color Milestone Selling
+        = image_tag asset_url("photos/milestone.jpg")
+        %p.pad Here we have been involved in the development of both the full stack admin application, the single page frontend application and the API.
+
+    .span4
+      = link_to "http://fakta.dk", class: "block", target: "_blank" do
+        %h2.color Fakta
+        = image_tag asset_url("photos/fakta.jpg")
+        %p.pad In this project we developed an advanced fully hypermedia API for one of the largest supermarket chains in Denmark.
+
+  .row.pad
+    .span4
+      = link_to "http://chronicles.dk", class: "block", target: "_blank" do
+        %h2.color Chronicles
+        = image_tag asset_url("photos/chronicles.jpg")
+        %p.pad This is an online tool for managing your LARP characters.

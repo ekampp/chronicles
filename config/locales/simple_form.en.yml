@@ -1,0 +1,32 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+
+    placeholders:
+      contact_attempt:
+        name: "Your name"
+        email: "Your email"
+        url: "Website (optional)"
+        comment: "What's on your mind?"
+      project:
+        description: "You can write an optional detailed description of the project here."
+
+    labels:
+      user:
+        receive_newsletter: "Receive our newsletter?"
+
+  helpers:
+    submit:
+      contact_attempt:
+        create: "Get in touch"
+      user:
+        update: "Update my settings"

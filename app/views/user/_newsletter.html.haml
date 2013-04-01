@@ -1,0 +1,17 @@
+= form.input :email, hint: t(".newsletter_and_gravater")
+
+.newsletter_container
+  = form.input :receive_newsletter, as: :boolean
+
+= content_for :js do
+  :javascript
+    $newsletter_container = $(".newsletter_container")
+    email = $("#user_email").val();
+    if(email) $newsletter_container.show();
+    else $newsletter_container.hide();
+    $("#user_email").on("change", function(event){
+      value = $(this).val();
+      re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(value)) $newsletter_container.show();
+      else $newsletter_container.hide();
+    });
