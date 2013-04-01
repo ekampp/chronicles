@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
 
   # Rescues in the case that oauth returns 401
   rescue_from OAuth::Unauthorized, with: :render_401
-  rescue_from CanCan::AccessDenied, with: :render_401
+  rescue_from CanCan::Unauthorized, with: :render_401
 
 
 protected
