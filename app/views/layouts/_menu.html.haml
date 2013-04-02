@@ -12,7 +12,7 @@
               %i.icon-user
         %li
           - if signed_in?
-            = link_to sign_out_path do
+            = link_to sign_out_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "data-original-title" => t(".sign_out_tip") do
               %i.icon-signout
           - else
             = link_to sign_in_path do

@@ -82,6 +82,7 @@ describe "Update settings" do
       describe "page" do
         subject{ page }
         it { should have_content I18n.translate("flash.users.update.notice") }
+        it { should have_css "input[value='#{atrs[:email]}']" }
       end
     end
   end

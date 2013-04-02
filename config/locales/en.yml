@@ -1,11 +1,8 @@
 en:
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            age_confirmed:
-              inclusion: You must confirm your age!
+  layouts:
+    menu:
+      sign_out_tip: "Sign out"
+      my_characters: "My characters"
 
   users:
     form:
