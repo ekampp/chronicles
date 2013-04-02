@@ -51,5 +51,20 @@ module Chronicles
     # Compress JavaScripts and CSS.
     config.assets.js_compressor  = :uglifier
     config.assets.css_compressor = :sass
+
+    # Whether to fallback to assets pipeline if a precompiled asset is missed.
+    config.assets.compile = true
+
+    # Generate digests for assets URLs.
+    config.assets.digest = true
+
+    # Enable assets for asset_sync
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets.
+    config.assets.version = '1.0'
+
+    # Nest assets under the environment
+    config.assets.prefix = "/#{Rails.env}/assets"
   end
 end
