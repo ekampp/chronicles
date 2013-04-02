@@ -3,18 +3,19 @@
 FactoryGirl.define do
   factory :user do
     name { Faker::Name.name }
-    uid "123545"
+    email { Faker::Internet.email }
+    uid 345345
     provider "twitter"
-    role :user
-    session_token SecureRandom.urlsafe_base64
+    role "user"
+    session_id { SecureRandom.urlsafe_base64 }
 
-    trait :mock_twitter do
+    trait :mock_omniauth do
       after :build do |u|
-        OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-          :provider => u.provider,
-          :uid => u.uid,
-          info: { name: u.name }
-        })
+        OmniAuth.config.mock_auth[u.provider.to_sym] = OmniAuth::AuthHash.new \
+          provider: u.provider,
+          uid: u.uid,
+          info: { name: u.name },
+          credentials: { token: u.token }
       end
     end
   end

@@ -1,5 +1,9 @@
+require "application_responder"
+
 class ApplicationController < ActionController::Base
+
   # Mime types to respond to
+  self.responder = ApplicationResponder
   respond_to :html
 
   # Prevent CSRF attacks by raising an exception.
@@ -11,25 +15,37 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
-  # # Add some additional context to honeybadger
-  # before_filter do
-  #   Honeybadger.context({
-  #     :user_id => current_user.id,
-  #     :user_name => current_user.name,
-  #     :user_uid => current_user.uid,
-  #     :user_provider => current_user.provider
-  #   }) if signed_in?
-  # end
+  def current_user
+    @current_user ||= User.where(session_id: session[:session_token]).first
+  end
+  helper_method :current_user
+
+  def signed_in?
+    !!current_user
+  end
+  helper_method :signed_in?
+
+  def last_known_location
+    session[:last_known_location] || root_path
+  end
+
+  def sign_in! user
+    session[:session_token] = user.session_id
+    @current_user = user
+  end
+
+  def sign_out!
+    session[:session_token] = @current_user = nil
+  end
 
   # Rescues in the case that oauth returns 401
   rescue_from OAuth::Unauthorized, with: :render_401
   rescue_from CanCan::Unauthorized, with: :render_401
 
-
 protected
 
   def render_401
-    flash[:alert] = I18n.t("application.render_401.rescued")
+    flash[:alert] = I18n.t("flash.application.render_401")
     redirect_to root_path
   end
 

@@ -1,0 +1,17 @@
+.container
+  .row
+    .span12
+      %h1= t(".sign_in")
+
+  .row
+    .span12
+      %ul.nav.nav-pills
+        - unless Rails.env.production?
+          %li
+            = link_to "/auth/developer", id: "developer_sign_in" do
+              %i.icon-user
+              = t(".developer_sign_in")
+        %li
+          = link_to "/auth/twitter", id: "twitter_sign_in" do
+            %i.icon-twitter
+            = t(".twitter_sign_in")

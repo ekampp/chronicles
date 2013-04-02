@@ -40,8 +40,6 @@ module Chronicles
       g.helper false
       g.template_engine :haml
       g.view_specs false
-      g.helper_specs false
-      g.controller_specs false
       g.test_framework :rspec, :fixture => true, :views => false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end

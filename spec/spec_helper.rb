@@ -14,13 +14,6 @@ Spork.prefork do
   # Sets omniauth into test mode
   OmniAuth.config.test_mode = true
 
-  # Sets default twitter user credentials
-  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-    :provider => 'twitter',
-    :uid => '123545',
-    info: { name: "Bob Magnus" }
-  })
-
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
