@@ -1,0 +1,19 @@
+.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    .container
+      %a.brand(href="/") Chronicles
+      %ul.nav
+        %li= link_to t(".my_characters"), characters_path
+
+      %ul.nav.pull-right
+        - if signed_in?
+          %li
+            = link_to [ :edit, current_user ] do
+              %i.icon-user
+        %li
+          - if signed_in?
+            = link_to sign_out_path do
+              %i.icon-signout
+          - else
+            = link_to sign_in_path do
+              %i.icon-signin

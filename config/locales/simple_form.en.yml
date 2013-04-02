@@ -20,13 +20,11 @@ en:
       project:
         description: "You can write an optional detailed description of the project here."
 
-    labels:
+    hints:
       user:
-        receive_newsletter: "Receive our newsletter?"
+        age: You must be age 16 or above. By entering your age you confirm that you am indeed aged 16 or above.
 
   helpers:
     submit:
       contact_attempt:
         create: "Get in touch"
-      user:
-        update: "Update my settings"

@@ -41,12 +41,16 @@ class ApplicationController < ActionController::Base
   # Rescues in the case that oauth returns 401
   rescue_from OAuth::Unauthorized, with: :render_401
   rescue_from CanCan::Unauthorized, with: :render_401
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :render_404
 
 protected
 
   def render_401
-    flash[:alert] = I18n.t("flash.application.render_401")
-    redirect_to root_path
+    redirect_to root_path, alert: I18n.t("flash.application.render_401")
+  end
+
+  def render_404
+    redirect_to root_path, alert: I18n.t("flash.application.render_404")
   end
 
 end

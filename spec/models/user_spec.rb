@@ -26,6 +26,7 @@ describe User do
   it { should have_field(:uid).with_default_value_of(nil) }
   it { should have_field(:token).with_default_value_of(nil) }
   it { should have_field(:session_id).with_default_value_of(nil) }
+  it { should have_field(:age).with_default_value_of(nil) }
 
   # Validations
   it { should be_valid }
@@ -39,6 +40,8 @@ describe User do
   it { should validate_uniqueness_of(:uid).scoped_to(:provider) }
   it { should validate_uniqueness_of(:session_id) }
   it { should validate_presence_of(:session_id) }
+  it { should validate_presence_of(:age) }
+  it { should validate_numericality_of(:age).greater_than_or_equal_to(16) }
 
   describe "class methods" do
     describe ".find_or_build_from_omniauth_hash" do

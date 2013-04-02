@@ -1,9 +1,32 @@
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            age_confirmed:
+              inclusion: You must confirm your age!
+
+  users:
+    form:
+      update: "Update my settings"
+      cancel: "Cancel"
+    edit:
+      title: Edit your profile
+      lead: |
+        Here you can edit information about your profile, such as email,
+        password, age and such. The information here will be verified by a game
+        master before game start!
+
   flash:
+    users:
+      update:
+        notice: Your profile has been updated
     sessions:
       create:
-        success: "You have been signed in"
-        missing_information: "To somplete you sign in, we need a little more information"
+        success: You have been signed in
+        missing_information: |
+          To somplete you sign in, we need a little more information
     application:
-      render_401:
-        rescued: "You are not authorized to view that page!"
+      render_404: Sorry. That page isn't available.
+      render_401: You are not authorized to view that page!

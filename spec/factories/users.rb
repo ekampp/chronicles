@@ -8,6 +8,7 @@ FactoryGirl.define do
     provider "twitter"
     role "user"
     session_id { SecureRandom.urlsafe_base64 }
+    age 16
 
     trait :mock_omniauth do
       after :build do |u|

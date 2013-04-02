@@ -10,6 +10,7 @@ class User
   field :role, type: String, default: "user"
   field :token, type: String
   field :session_id, type: String
+  field :age, type: Integer
 
   # Validations
   validates :name, presence: true
@@ -18,6 +19,8 @@ class User
   validates :session_id, presence: true, uniqueness: true
   validates :provider, presence: true
   validates :role, presence: true, inclusion: [ "user", "gm", "admin" ]
+  validates :age, presence: true, confirmation: true,
+    numericality: { greater_than_or_equal_to: 16 }
 
   # Returns a user object based on the hash schema returned by the omniauth
   # gem.

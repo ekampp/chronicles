@@ -1,2 +1,8 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.haml
+.container
+  .row
+    .span12
+      %h1= t(".title")
+      %p.lead= t(".lead")
+
+  = simple_form_for user, html: { class: "form-horizontal" } do |form|
+    = render form

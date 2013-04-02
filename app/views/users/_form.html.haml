@@ -1,0 +1,15 @@
+.row
+  .span12
+    %fieldset
+      %legend= t(".general_information")
+      = form.input :name
+      = form.input :email
+      = form.input :age
+
+.row
+  .span12
+    .form-actions
+      %button(type="submit" class="btn btn-success" id="commit")
+        %i.icon-ok.icon-large
+        = t(".update")
+      = link_to t(".cancel"), root_path, class: "btn btn-link"

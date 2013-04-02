@@ -30,6 +30,9 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
+# Markdown
+gem "redcarpet"
+
 group :assets do
   gem 'sprockets-rails', github: 'rails/sprockets-rails'
   gem 'coffee-rails', github: 'rails/coffee-rails'

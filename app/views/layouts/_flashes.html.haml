@@ -1,5 +1,15 @@
-- if flash[:notice]
-  %p.alert.alert-success= flash[:notice]
+.container
+  .row
+    .span12
+      .flashes
+        - if flash[:notice]
+          .alert.alert-success
+            %button(type="button" class="close" data-dismiss="alert")
+              %i.icon-remove
+            = flash[:notice].to_s.markdown
 
-- if flash[:alert]
-  %p.alert.alert-error= flash[:alert]
+        - if flash[:alert]
+          .alert.alert-success
+            %button(type="button" class="close" data-dismiss="alert")
+              %i.icon-remove
+            = flash[:alert].to_s.markdown

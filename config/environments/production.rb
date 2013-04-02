@@ -72,4 +72,22 @@ Chronicles::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Whether to fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
+
+  # Generate digests for assets URLs.
+  config.assets.digest = true
+
+  # Enable assets for asset_sync
+  config.assets.enabled = true
+
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+
+  # Nest assets under the environment
+  config.assets.prefix = "/#{Rails.env}/assets"
 end

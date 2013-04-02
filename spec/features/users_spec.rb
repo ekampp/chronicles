@@ -57,3 +57,32 @@ describe "Sign in with developer strategy" do
     end
   end
 end
+
+describe "Update settings" do
+  before do
+    @user = create :user, :mock_omniauth, provider: :developer
+  end
+
+  context "when logged in" do
+    before do
+      visit sign_in_path
+      click_link "twitter_sign_in"
+      visit edit_user_path(@user)
+    end
+
+    context "fill in email" do
+      let(:atrs) { attributes_for :user }
+      before do
+        within "#edit_user_#{@user.id}" do
+          fill_in "user_email", with: atrs[:email]
+          click_button "commit"
+        end
+      end
+
+      describe "page" do
+        subject{ page }
+        it { should have_content I18n.translate("flash.users.update.notice") }
+      end
+    end
+  end
+end
