@@ -63,8 +63,5 @@ module Chronicles
 
     # Version of your assets, change this if you want to expire all your assets.
     config.assets.version = '1.0'
-
-    # Nest assets under the environment
-    config.assets.prefix = "/#{Rails.env}/assets"
   end
 end
