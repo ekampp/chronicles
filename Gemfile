@@ -62,6 +62,6 @@ group :test, :development do
   gem 'growl'
   gem 'rack_session_access'
   gem 'email_spec'
-  gem "dotenv"
+  gem "dotenv-rails"
   gem 'quiet_assets'
 end
