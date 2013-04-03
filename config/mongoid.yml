@@ -80,6 +80,20 @@ test:
         retry_interval: 0
 
 
+staging:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        allow_dynamic_fields: true
+        parameterize_keys: true
+        persist_in_safe_mode: true
+        raise_not_found_error: false
+        reconnect_time: 3
+        use_object_ids: true
+        skip_version_check: true
+        safe: true
+
 production:
   sessions:
     default:
