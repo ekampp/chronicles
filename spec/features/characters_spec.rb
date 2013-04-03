@@ -5,7 +5,7 @@ describe "Listing characters" do
   let(:other_user) { create :user, :with_characters }
 
   before do
-    user # execute the block to stub the user
+    user # invoke the user
     visit sign_in_path
     click_link "twitter_sign_in"
     visit characters_path

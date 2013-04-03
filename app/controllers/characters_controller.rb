@@ -1,6 +1,9 @@
 class CharactersController < ApplicationController
-  expose :character, attributes: :character_params
-  expose(:characters){ current_user.characters }
+  expose :character,
+    attributes: :character_params,
+    ancestor: :current_user
+  expose :characters,
+    ancestor: :current_user
   load_and_authorize_resource
 
 private
