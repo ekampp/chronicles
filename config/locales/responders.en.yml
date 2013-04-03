@@ -9,6 +9,8 @@ en:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
     characters:
+      destroy:
+        notice: The character has been deleted
       create:
         notice: You character has been created
       update:

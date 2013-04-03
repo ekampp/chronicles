@@ -12,6 +12,11 @@ class CharactersController < ApplicationController
   end
   alias_method :create, :update
 
+  def destroy
+    character.destroy
+    respond_with character, location: characters_path
+  end
+
 private
 
   def character_params

@@ -11,6 +11,8 @@ en:
       lead: "Here you can make the next mafioso or sleak business man."
     form:
       update: "Save character"
+      delete: Delete
+      confirm_delete: The character will be comepletely deleted. This cannot be undone.
     edit:
       title: "Edit %{name}"
       lead: |

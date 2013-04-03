@@ -6,3 +6,5 @@
       %button(type="submit" id="commit" class="btn btn-success")
         %i.icon-ok.icon-large
         = t(".update")
+      - if form.object.persisted?
+        = link_to t(".delete"), character, method: :delete, data: { confirm: t(".confirm_delete") }, class: "btn btn-link"
