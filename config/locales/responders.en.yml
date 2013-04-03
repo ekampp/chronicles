@@ -9,8 +9,10 @@ en:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
     characters:
+      create:
+        notice: You character has been created
       update:
-        notice: "Your character has been updated"
+        notice: Your character has been updated
     users:
       update:
         notice: Your profile has been updated

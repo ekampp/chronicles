@@ -6,6 +6,9 @@ en:
       developer_sign_in: "Sign in as a developer"
 
   characters:
+    new:
+      title: "Create a new character"
+      lead: "Here you can make the next mafioso or sleak business man."
     form:
       update: "Save character"
     edit:
@@ -16,7 +19,9 @@ en:
     index:
       title: "My characters"
       lead: |
-        Below you can see your current characters, and their progress.
+        Below you can see your current characters, and their progress. You can
+        also %{link_to_new}.
+      new_character: create a new character
 
   layouts:
     menu:

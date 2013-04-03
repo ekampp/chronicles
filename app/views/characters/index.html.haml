@@ -2,7 +2,7 @@
   .row
     .span12
       %h1= t(".title")
-      %p.lead= t(".lead")
+      %p.lead= t(".lead", link_to_new: link_to(t(".new_character"), new_character_path)).html_safe
 
   .row
     .span12
