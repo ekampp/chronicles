@@ -32,12 +32,8 @@ describe "Editing a character" do
 
   describe "submitting the form" do
     let(:atrs) { attributes_for :character }
-    before do
-      within "#edit_character_#{character.id}" do
-        fill_in "character_name", with: atrs[:name]
-        click_button "commit"
-      end
-    end
+    let(:form) { {id: "#edit_character_#{character.id}", name: "character", commit: "commit"} }
+    include_context :fill_and_submit_form
 
     it { page.should have_content I18n.translate("flash.characters.update.notice") }
     it { current_path.should eq edit_character_path(character) }
@@ -60,12 +56,8 @@ describe "Creating a new character" do
   it { page.should have_content I18n.translate("characters.new.lead") }
 
   context "filling in the form" do
-    before do
-      within "#new_character" do
-        fill_in "character_name", with: atrs[:name]
-        click_button "commit"
-      end
-    end
+    let(:form) { {id: "#new_character", name: "character", commit: "commit"} }
+    include_context :fill_and_submit_form
 
     it { current_path.should match /\A\/characters\/.{24}\/edit\z/ }
     it { page.should have_content I18n.translate("flash.characters.create.notice") }
