@@ -1,10 +1,15 @@
 class CharactersController < ApplicationController
-  expose :character,
-    attributes: :character_params,
-    ancestor: :current_user
+  load_and_authorize_resource
   expose :characters,
     ancestor: :current_user
-  load_and_authorize_resource
+  expose :character,
+    attributes: :character_params,
+    ancestor: :characters
+
+  def update
+    character.save
+    respond_with character, location: [ :edit, character ]
+  end
 
 private
 
