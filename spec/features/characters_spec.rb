@@ -4,10 +4,9 @@ describe "Listing characters" do
   let(:user) { create :user, :with_characters, :mock_omniauth }
   let(:other_user) { create :user, :with_characters }
 
+  include_context :capybara_sign_in
+
   before do
-    user # invoke the user
-    visit sign_in_path
-    click_link "twitter_sign_in"
     visit characters_path
   end
 
@@ -29,10 +28,9 @@ describe "Editing a character" do
   let(:other_user) { create :user, :with_characters }
   let(:character) { user.characters.sample }
 
+  include_context :capybara_sign_in
+
   before do
-    user # invoke the user
-    visit sign_in_path
-    click_link "twitter_sign_in"
     visit edit_character_path(character)
   end
 
@@ -67,10 +65,9 @@ describe "Creating a new character" do
   let(:other_user) { create :user, :with_characters }
   let(:atrs) { attributes_for :character }
 
+  include_context :capybara_sign_in
+
   before do
-    user # invoke the user
-    visit sign_in_path
-    click_link "twitter_sign_in"
     visit characters_path
     click_link I18n.translate("characters.index.new_character")
   end
