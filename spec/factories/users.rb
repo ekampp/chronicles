@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     name { Faker::Name.name }
     email { Faker::Internet.email }
-    uid 345345
+    uid { Faker::Base.numerify "#######" }
     provider "twitter"
     role "user"
     session_id { SecureRandom.urlsafe_base64 }
@@ -17,6 +17,14 @@ FactoryGirl.define do
           uid: u.uid,
           info: { name: u.name },
           credentials: { token: u.token }
+      end
+    end
+
+    trait :with_characters do
+      after :create do |u|
+        create :character, user: u
+        create :character, user: u
+        u = u.reload
       end
     end
   end

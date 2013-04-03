@@ -60,7 +60,7 @@ end
 
 describe "Update settings" do
   before do
-    @user = create :user, :mock_omniauth, provider: :developer
+    @user = create :user, :mock_omniauth
   end
 
   context "when logged in" do

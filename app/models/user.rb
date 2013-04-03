@@ -22,6 +22,9 @@ class User
   validates :age, presence: true, confirmation: true,
     numericality: { greater_than_or_equal_to: 16 }
 
+  # Associations
+  has_many :characters
+
   # Returns a user object based on the hash schema returned by the omniauth
   # gem.
   #

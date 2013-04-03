@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Enable CanCan
+  enable_authorization
+
   # Allows decent exposure to use strong parameters.
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy

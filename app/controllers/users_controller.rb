@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   expose :user, attributes: :user_params
+  load_and_authorize_resource
 
   def update
     user.save

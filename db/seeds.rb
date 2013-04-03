@@ -6,3 +6,6 @@ emil = FactoryGirl.build :user,
   role: :admin,
   email: nil
 emil.save validation: false
+
+FactoryGirl.create :character, user: emil
+FactoryGirl.create :character, user: emil

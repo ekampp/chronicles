@@ -1,4 +1,16 @@
 en:
+  sessions:
+    new:
+      sign_in: Sign in
+      twitter_sign_in: "Sign in with twitter"
+      developer_sign_in: "Sign in as a developer"
+
+  characters:
+    index:
+      title: "My characters"
+      lead: |
+        Below you can see your current characters, and their progress.
+
   layouts:
     menu:
       sign_out_tip: "Sign out"
@@ -23,7 +35,7 @@ en:
       create:
         success: You have been signed in
         missing_information: |
-          To somplete you sign in, we need a little more information
+          To complete you sign in, we need a little more information
     application:
       render_404: Sorry. That page isn't available.
       render_401: You are not authorized to view that page!

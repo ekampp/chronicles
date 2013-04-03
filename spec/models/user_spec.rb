@@ -43,6 +43,16 @@ describe User do
   it { should validate_presence_of(:age) }
   it { should validate_numericality_of(:age).greater_than_or_equal_to(16) }
 
+  describe "factories" do
+    describe "with_characters" do
+      subject{ create(:user, :with_characters).characters }
+      its(:count) { should eq 2 }
+    end
+  end
+
+  # Associations
+  it { should have_many :characters }
+
   describe "class methods" do
     describe ".find_or_build_from_omniauth_hash" do
       subject{ User.find_or_build_from_omniauth_hash(hash) }

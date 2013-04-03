@@ -1,0 +1,15 @@
+.container
+  .row
+    .span12
+      %h1= t(".title")
+      %p.lead= t(".lead")
+
+  .row
+    .span12
+      .media
+        - characters.each do |character|
+          = link_to [:edit, character], class: "pull-left" do
+            %img(data-source="http://placehold.it/64x64" class="media-object")
+          .media-body
+            = link_to [:edit, character] do
+              %h2= character.name
