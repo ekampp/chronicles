@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def render_401
-    redirect_to root_path, alert: I18n.t("flash.application.render_401")
+    redirect_to sign_in_path, alert: I18n.t("flash.application.render_401")
   end
 
   def render_404
