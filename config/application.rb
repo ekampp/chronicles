@@ -8,6 +8,10 @@ require "sprockets/railtie"
 require "rack/cors"
 require 'digest/md5'
 require "bootstrap-sass"
+require "jquery-rails"
+require "asset_sync"
+require "font-awesome-sass-rails"
+require "bootstrap-sass"
 # require "rails/test_unit/railtie"
 
 # Assets should be precompiled for production (so we don't need the gems loaded then)
@@ -63,8 +67,5 @@ module Chronicles
 
     # Version of your assets, change this if you want to expire all your assets.
     config.assets.version = '1.0'
-
-    # Nest assets under the environment
-    config.assets.prefix = "/#{Rails.env}/assets"
   end
 end

@@ -6,6 +6,13 @@ en:
       developer_sign_in: "Sign in as a developer"
 
   characters:
+    form:
+      update: "Save character"
+    edit:
+      title: "Edit %{name}"
+      lead: |
+        Here you can update your character's bio, his life events and check him
+        in and out of games.
     index:
       title: "My characters"
       lead: |
@@ -26,16 +33,3 @@ en:
         Here you can edit information about your profile, such as email,
         password, age and such. The information here will be verified by a game
         master before game start!
-
-  flash:
-    users:
-      update:
-        notice: Your profile has been updated
-    sessions:
-      create:
-        success: You have been signed in
-        missing_information: |
-          To complete you sign in, we need a little more information
-    application:
-      render_404: Sorry. That page isn't available.
-      render_401: You are not authorized to view that page!
