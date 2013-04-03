@@ -8,3 +8,17 @@ en:
       destroy:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
+    characters:
+      update:
+        notice: "Your character has been updated"
+    users:
+      update:
+        notice: Your profile has been updated
+    sessions:
+      create:
+        success: You have been signed in
+        missing_information: |
+          To complete you sign in, we need a little more information
+    application:
+      render_404: Sorry. That page isn't available.
+      render_401: You are not authorized to view that page!

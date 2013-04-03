@@ -1,0 +1,8 @@
+.container
+  .row
+    .span12
+      %h1= t(".title", name: character.name)
+      %p.lead= t(".lead")
+
+  = simple_form_for character, html: { class: "form-horizontal" } do |form|
+    = render form

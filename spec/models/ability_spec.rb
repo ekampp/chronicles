@@ -26,6 +26,7 @@ describe Ability do
     let(:other_user) { create :user }
 
     it { should be_able_to :access, :sessions }
+    it { should be_able_to :read, :characters }
     it { should be_able_to :update, :characters, user_id: user.id }
     it { should be_able_to :update, build(:character, user: user) }
     it { should_not be_able_to :update, build(:character, user: other_user) }

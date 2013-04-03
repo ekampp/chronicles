@@ -39,7 +39,6 @@ group :assets do
   gem 'uglifier'
   gem 'bootstrap-sass'
   gem 'font-awesome-sass-rails'
-  gem 'html5shiv-rails'
   gem "jquery-rails"
   gem 'asset_sync'
 end
