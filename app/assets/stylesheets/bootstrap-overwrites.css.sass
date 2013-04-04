@@ -1,3 +1,8 @@
+@mixin border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
 // Overwrites the .controls when we are dealing with a boolean in a horizontal
 // form. This is to ensure that it's aligned with it's label.
 .form-horizontal
@@ -12,6 +17,11 @@ body, legend
 // Labels shouldn't be bold
 label
   font-weight: 300
+
+textarea
+  @include border-box
+  width: 100%
+  height: 150px
 
 // Overwrites the background color of the form-actions
 .form-actions

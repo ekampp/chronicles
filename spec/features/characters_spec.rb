@@ -31,8 +31,8 @@ describe "Editing a character" do
   it { page.should have_content I18n.translate("characters.edit.title", name: character.name) }
 
   describe "submitting the form" do
-    let(:atrs) { attributes_for :character }
-    let(:form) { {id: "#edit_character_#{character.id}", name: "character", commit: "commit"} }
+    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio) }
+    let(:form) { {id: "#edit_character_#{character.id}"} }
     include_context :fill_and_submit_form
 
     it { page.should have_content I18n.translate("flash.characters.update.notice") }
@@ -43,7 +43,6 @@ end
 describe "Creating a new character" do
   let(:user) { create :user, :with_characters, :mock_omniauth }
   let(:other_user) { create :user, :with_characters }
-  let(:atrs) { attributes_for :character }
   include_context :capybara_sign_in
 
   before do
@@ -56,7 +55,8 @@ describe "Creating a new character" do
   it { page.should have_content I18n.translate("characters.new.lead") }
 
   context "filling in the form" do
-    let(:form) { {id: "#new_character", name: "character", commit: "commit"} }
+    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio) }
+    let(:form) { {id: "#new_character"} }
     include_context :fill_and_submit_form
 
     it { current_path.should match /\A\/characters\/.{24}\/edit\z/ }
