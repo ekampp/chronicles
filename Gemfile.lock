@@ -304,6 +304,9 @@ GEM
     rspec-mocks (2.13.0)
     ruby-hmac (0.4.0)
     rubyzip (0.9.9)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
+      nokogiri (>= 1.4.4, < 1.6)
     sass (3.3.0.alpha.103)
     selenium-webdriver (2.31.0)
       childprocess (>= 0.2.5)
@@ -392,6 +395,7 @@ DEPENDENCIES
   responders
   rmagick
   rspec-rails!
+  sanitize
   sass (= 3.3.0.alpha.103)
   sass-rails!
   simple_form!

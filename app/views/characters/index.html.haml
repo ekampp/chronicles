@@ -13,5 +13,6 @@
               = image_tag "http://placehold.it/200x200"
             .span10
               %h2= character.name
+              = character.public_bio.to_s.sanitize(:restricted).html_safe
               .progress.pad{ class: progress_class(character.progress) }
                 .bar{ style: "width: #{character.progress}%" }

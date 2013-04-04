@@ -25,6 +25,7 @@ gem "haml", "4.0.1.rc.1"
 gem "haml-rails"
 gem 'simple_form', github: "plataformatec/simple_form"
 gem 'responders'
+gem 'sanitize'
 
 # File upload
 gem 'rmagick'

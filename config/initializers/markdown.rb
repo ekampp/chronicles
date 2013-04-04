@@ -21,4 +21,16 @@ class String
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+
+  def sanitize(type = :relaxed)
+    type = case type
+    when :restricted
+      Sanitize::Config::RESTRICTED
+    when :basic
+      Sanitize::Config::BASIC
+    else
+      Sanitize::Config::RELAXED
+    end
+    Sanitize.clean(self.to_s, type)
+  end
 end
