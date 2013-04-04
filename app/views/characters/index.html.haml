@@ -10,7 +10,7 @@
         .row
           = link_to [:edit, character] do
             .span2.hidden-phone
-              = image_tag "http://placehold.it/200x200"
+              = image_tag character.avatar.thumb.url
             .span10
               %h2= character.name
               = character.public_bio.to_s.sanitize(:restricted).html_safe

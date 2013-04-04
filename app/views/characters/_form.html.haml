@@ -1,12 +1,27 @@
-.row.pad
-  .span12
-    = form.input :name
-    = form.input :public_bio, as: :text, input_html: { class: "redactor-standard" }
-    = form.input :private_bio, as: :text, input_html: { class: "redactor-standard" }
+= simple_form_for character, html: { class: "form-horizontal", multipart: true } do |form|
+  .row.pad
+    .span9
+      = form.input :name
+      = form.input :public_bio, as: :text, input_html: { class: "redactor-standard" }
+    .span3
+      .controls.fullwidth.nomargin
+        .fileupload.fileupload-new(data-provides="fileupload")
+          .fileupload-preview.thumbnail
+            = image_tag form.object.avatar.thumb.url
+          %div
+            %span.btn.btn-info.btn-file
+              %span.fileupload-new Select image
+              %span.fileupload-exists Change
+              %input(type="file" name="character[avatar]" id="character_avatar")
+            %a.btn.btn-danger.fileupload-exists(href="#" data-dismiss="fileupload") Remove
 
-    .form-actions
-      %button(type="submit" id="commit" class="btn btn-success")
-        %i.icon-ok.icon-large
-        = t(".update")
-      - if form.object.persisted?
-        = link_to t(".delete"), character, method: :delete, data: { confirm: t(".confirm_delete") }, class: "btn btn-link"
+  .row
+    .span12
+      = form.input :private_bio, as: :text, input_html: { class: "redactor-standard" }
+
+      .form-actions
+        %button(type="submit" id="commit" class="btn btn-success")
+          %i.icon-ok.icon-large
+          = t(".update")
+        - if form.object.persisted?
+          = link_to t(".delete"), character, method: :delete, data: { confirm: t(".confirm_delete") }, class: "btn btn-link"

@@ -1,0 +1,16 @@
+.fullwidth {
+  width: 100% !important;
+}
+
+.nomargin {
+  margin: 0 !important;
+}
+
+@include min-screen(768px) {
+  .tablet-pull-right {
+    float: right !important;
+  }
+  .tablet-pull-left {
+    float: left !important;
+  }
+}

@@ -30,6 +30,8 @@ Spork.prefork do
     config.include EmailSpec::Helpers
     config.include EmailSpec::Matchers
 
+    config.include CarrierWave::Test::Matchers
+
     config.before(:suite) do
       DatabaseCleaner.strategy = :truncation
       DatabaseCleaner.clean_with(:truncation)

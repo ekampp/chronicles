@@ -7,8 +7,12 @@ class Character
   field :name, type: String
   field :public_bio, type: String
   field :private_bio, type: String
+  field :avatar, type: String
+  field :avatar_cache, type: String
 
   belongs_to :user
+
+  mount_uploader :avatar, CharacterAvatarUploader
 
   validates :name, presence: true
 

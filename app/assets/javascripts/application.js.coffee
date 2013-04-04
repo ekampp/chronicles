@@ -2,6 +2,7 @@
 #= require jquery.migrate
 #= require jquery_ujs
 #= require bootstrap
+#= require bootstrap-fileupload
 #= require redactor.min
 #= require_tree .
 

@@ -17,8 +17,8 @@
 #     let(:atrs) { {name: "Weeble & Bob"} }
 #   end
 #
-# Lastly an example where the name of the elements in the form is something
-# other than can be inferred from the id.
+# Where the name of the elements in the form is something other than can be
+# inferred from the id.
 #
 #   include_context :fill_and_submit_form do
 #     let(:form){ {id: "new_user_form", name: "person" } }
@@ -31,15 +31,9 @@ shared_context :fill_and_submit_form do
       atrs.compact.each do |field, value|
         # transforms `_field` into `field` in case the form has no name.
         field = "#{(form[:name] || form[:id].split('_')[1])}_#{field}".split("_").compact.join("_")
-        begin
-          fill_in field, with: value
-        rescue
-          begin
-            select value, from: field
-          rescue
-            raise "Could not fill in #{field}!"
-          end
-        end
+        fill_in field, with: value rescue nil
+        select value, from: field rescue nil
+        attach_file field, value rescue nil
       end
       click_button form[:commit] || "commit"
     end

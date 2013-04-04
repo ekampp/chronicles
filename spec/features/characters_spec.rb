@@ -31,12 +31,16 @@ describe "Editing a character" do
   it { page.should have_content I18n.translate("characters.edit.title", name: character.name) }
 
   describe "submitting the form" do
-    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio, :private_bio) }
     let(:form) { {id: "#edit_character_#{character.id}"} }
+    let(:atrs) { attributes_for(:character).extract!:name, :public_bio, :private_bio }
     include_context :fill_and_submit_form
 
-    it { page.should have_content I18n.translate("flash.characters.update.notice") }
     it { current_path.should eq edit_character_path(character) }
+    it { page.should have_content I18n.translate("flash.characters.update.notice") }
+    it { page.should have_css "input#character_name[value='#{atrs[:name]}']" }
+    it { page.should have_selector "textarea#character_public_bio", text: atrs[:public_bio] }
+    it { page.should have_selector "textarea#character_private_bio", text: atrs[:private_bio] }
+    it { page.should have_selector "textarea#character_private_bio", text: atrs[:private_bio] }
   end
 end
 
