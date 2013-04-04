@@ -23,7 +23,7 @@ describe "Update settings" do
     before { visit edit_user_path(user) }
 
     context "fill in email" do
-      let(:atrs) { attributes_for(:user).extract!(:name, :email, :age) }
+      let(:atrs) { attributes_for(:user).extract!(:name, :email, :age, :locale) }
       let(:form) { {id: "#edit_user_#{user.id}", name: "user"} }
       include_context :fill_and_submit_form
 

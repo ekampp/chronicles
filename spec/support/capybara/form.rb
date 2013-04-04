@@ -29,7 +29,16 @@ shared_context :fill_and_submit_form do
   before do
     within form[:id] do
       atrs.compact.each do |field, value|
-        fill_in "#{(form[:name] || form[:id].split('_')[1])}_#{field}", with: value
+        field = "#{(form[:name] || form[:id].split('_')[1])}_#{field}".split("_").compact.join("_")
+        begin
+          fill_in field, with: value
+        rescue
+          begin
+            select value, from: field
+          rescue
+            raise "Could not fill in #{field}!"
+          end
+        end
       end
       click_button form[:commit] || "commit"
     end

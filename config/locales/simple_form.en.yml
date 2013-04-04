@@ -9,6 +9,10 @@ en:
     error_notification:
       default_message: "Some errors were found, please take a look:"
 
+    labels:
+      user:
+        locale: Language
+
     placeholders:
       contact_attempt:
         name: "Your name"
