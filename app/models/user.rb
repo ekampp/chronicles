@@ -11,9 +11,11 @@ class User
   field :token, type: String
   field :session_id, type: String
   field :age, type: Integer
+  field :locale, type: String, default: "en"
 
   # Validations
   validates :name, presence: true
+  validates :locale, presence: true
   validates :email, presence: true, uniqueness: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :session_id, presence: true, uniqueness: true

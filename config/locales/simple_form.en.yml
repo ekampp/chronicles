@@ -5,11 +5,13 @@ en:
     required:
       text: 'required'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
+      html: ''
     error_notification:
       default_message: "Some errors were found, please take a look:"
+
+    labels:
+      user:
+        locale: Language
 
     placeholders:
       contact_attempt:
@@ -18,11 +20,21 @@ en:
         url: "Website (optional)"
         comment: "What's on your mind?"
       project:
-        description: "You can write an optional detailed description of the project here."
+        description: |
+          You can write an optional detailed description of the project here.
 
     hints:
+      character:
+        public_bio: |
+          This is the part of your life that the public can know. You public
+          facing history.
+        private_bio: |
+          This is your private, secret biography. It will be used by the Game
+          Masters to create play for you.
       user:
-        age: You must be age 16 or above. By entering your age you confirm that you am indeed aged 16 or above.
+        age: |
+          You must be age 16 or above. By entering your age you confirm that
+          you am indeed aged 16 or above.
 
   helpers:
     submit:

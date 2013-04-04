@@ -14,6 +14,8 @@ class Ability
       if user.valid?
         can :read, :characters
         can :update, :characters, user_id: user.id
+        can :destroy, :characters, user_id: user.id
+        can :create, :characters
         can :access, :users, id: user.id
       end
     end
