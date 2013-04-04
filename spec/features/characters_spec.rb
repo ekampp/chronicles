@@ -31,7 +31,7 @@ describe "Editing a character" do
   it { page.should have_content I18n.translate("characters.edit.title", name: character.name) }
 
   describe "submitting the form" do
-    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio) }
+    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio, :private_bio) }
     let(:form) { {id: "#edit_character_#{character.id}"} }
     include_context :fill_and_submit_form
 
@@ -55,7 +55,7 @@ describe "Creating a new character" do
   it { page.should have_content I18n.translate("characters.new.lead") }
 
   context "filling in the form" do
-    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio) }
+    let(:atrs) { attributes_for(:character).extract!(:name, :public_bio, :private_bio) }
     let(:form) { {id: "#new_character"} }
     include_context :fill_and_submit_form
 

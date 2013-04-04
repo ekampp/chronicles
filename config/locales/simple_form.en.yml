@@ -28,6 +28,9 @@ en:
         public_bio: |
           This is the part of your life that the public can know. You public
           facing history.
+        private_bio: |
+          This is your private, secret biography. It will be used by the Game
+          Masters to create play for you.
       user:
         age: |
           You must be age 16 or above. By entering your age you confirm that

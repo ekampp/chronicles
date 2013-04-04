@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
 private
 
   def character_params
-    params.require(:character).permit(:name, :public_bio)
+    params.require(:character).permit(:name, :public_bio, :private_bio)
   end
 
 end

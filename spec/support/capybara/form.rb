@@ -29,6 +29,7 @@ shared_context :fill_and_submit_form do
   before do
     within form[:id] do
       atrs.compact.each do |field, value|
+        # transforms `_field` into `field` in case the form has no name.
         field = "#{(form[:name] || form[:id].split('_')[1])}_#{field}".split("_").compact.join("_")
         begin
           fill_in field, with: value
