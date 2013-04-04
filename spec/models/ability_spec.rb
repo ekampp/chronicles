@@ -9,7 +9,10 @@ describe Ability do
 
     it { should be_able_to :access, :sessions }
     it { should be_able_to :read, :application }
-    it { should_not be_able_to :access, :characters }
+    it { should_not be_able_to :update, :characters }
+    it { should_not be_able_to :read, :characters }
+    it { should_not be_able_to :create, :characters }
+    it { should_not be_able_to :destroy, :characters }
     it { should_not be_able_to :update, :user }
   end
 
@@ -18,6 +21,8 @@ describe Ability do
 
     it { should be_able_to :access, :sessions }
     it { should_not be_able_to :access, :characters }
+    it { should_not be_able_to :create, :characters }
+    it { should_not be_able_to :destroy, :characters }
     it { should be_able_to :update, user }
   end
 
@@ -27,6 +32,8 @@ describe Ability do
 
     it { should be_able_to :access, :sessions }
     it { should be_able_to :read, :characters }
+    it { should be_able_to :create, :characters }
+    it { should be_able_to :destroy, :characters, user_id: user.id }
     it { should be_able_to :update, :characters, user_id: user.id }
     it { should be_able_to :update, build(:character, user: user) }
     it { should_not be_able_to :update, build(:character, user: other_user) }

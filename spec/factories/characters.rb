@@ -3,6 +3,8 @@
 FactoryGirl.define do
   factory :character do
     name { Faker::Name.name }
+    public_bio { Faker::Lorem.paragraphs.sample }
+    private_bio { Faker::Lorem.paragraphs.sample }
     user nil
   end
 end

@@ -9,6 +9,7 @@ FactoryGirl.define do
     role "user"
     session_id { SecureRandom.urlsafe_base64 }
     age 16
+    locale "en"
 
     trait :mock_omniauth do
       after :build do |u|

@@ -5,6 +5,7 @@ gem 'rails',     github: 'rails/rails'
 gem 'arel',      github: 'rails/arel'
 gem "thin"
 gem "decent_exposure"
+gem 'locale_setter'
 
 # Security
 gem 'cancan', github: "ryanb/cancan", branch: "2.0"
@@ -62,6 +63,6 @@ group :test, :development do
   gem 'growl'
   gem 'rack_session_access'
   gem 'email_spec'
-  gem "dotenv"
+  gem "dotenv-rails"
   gem 'quiet_assets'
 end

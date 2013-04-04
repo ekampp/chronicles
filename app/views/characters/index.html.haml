@@ -2,14 +2,16 @@
   .row
     .span12
       %h1= t(".title")
-      %p.lead= t(".lead")
+      %p.lead= t(".lead", link_to_new: link_to(t(".new_character"), new_character_path)).html_safe
 
   .row
     .span12
-      .media
-        - characters.each do |character|
-          = link_to [:edit, character], class: "pull-left" do
-            %img(data-source="http://placehold.it/64x64" class="media-object")
-          .media-body
-            = link_to [:edit, character] do
+      - characters.each do |character|
+        .row
+          = link_to [:edit, character] do
+            .span2.hidden-phone
+              = image_tag "http://placehold.it/200x200"
+            .span10
               %h2= character.name
+              .progress.pad{ class: progress_class(character.progress) }
+                .bar{ style: "width: #{character.progress}%" }
