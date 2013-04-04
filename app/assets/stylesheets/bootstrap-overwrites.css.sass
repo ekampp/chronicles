@@ -3,6 +3,14 @@
   -moz-box-sizing: border-box
   box-sizing: border-box
 
+@mixin linear-gradient($topcolor, $bottomcolor)
+  background-color: $topcolor
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($bottomcolor), to($topcolor))
+  background: -webkit-linear-gradient(top, $topcolor, $bottomcolor)
+  background: -moz-linear-gradient(top, $topcolor, $bottomcolor)
+  background: -ms-linear-gradient(top, $topcolor, $bottomcolor)
+  background: -o-linear-gradient(top, $topcolor, $bottomcolor)
+
 // Overwrites the .controls when we are dealing with a boolean in a horizontal
 // form. This is to ensure that it's aligned with it's label.
 .form-horizontal
@@ -58,3 +66,7 @@ textarea
   color: #fff !important
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06)
   -webkit-font-smoothing: antialiased
+
+// Overwrite the progress background, to a darker linear gradient
+.progress
+  @include linear-gradient(#2e2e2e, #3c3c3c)
